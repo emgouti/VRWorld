@@ -1,0 +1,20 @@
+.card3{
+    padding-top: -3%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+  }
+
+  .main{
+    display: flex;
+   flex-direction: row;
+   
+  }
+
+  .big{
+    flex: 1 0 0;
+  }
+
+  .small{
+    flex: 2 0 0;
+  }

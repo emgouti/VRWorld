@@ -1,0 +1,21 @@
+.iframe-container {
+    overflow: hidden;
+    padding-top: 150%;
+    position: relative;
+  }
+  
+  .iframe-container iframe {
+     border: 0;
+     height: 100%;
+     left: 0;
+     position: absolute;
+     top: 0;
+     width: 150%;
+  }
+
+  .user {
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+  }
