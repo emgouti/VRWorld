@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :follows
+  get 'relationships/follow_user'
+  get 'relationships/unfollow_user'
+
+  match 'users/:id/images' => 'users#images', :via => [:get]
+  match 'collections/:id/images' => 'collections#images', :via => [:get, :post]
+  post ':username/follow_user', to: 'relationships#follow_user', as: :follow_user
+  post ':username/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
+  get 'users/following/:id', to: 'users#following', as: :following
+  get '/:id/imagesandcomment', to: 'users#imagesandcomment', as: :imagesandcomment
+  resources :relationships
   resources :collections
   resources :images
   resources :users
+  resources :auth
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
