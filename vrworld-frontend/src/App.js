@@ -16,7 +16,7 @@ import FriendProfile from './FriendProfile'
 import './styles.css';
 
 
-const local = "0.0.0.0"
+const local = "127.0.0.1"
 
 class App extends Component {
 
