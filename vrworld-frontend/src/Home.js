@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import QueueAnim from 'rc-queue-anim';
-import './styles.css'
+import './styles/styles.css'
 import LoginPop from './LoginPop'
 
 

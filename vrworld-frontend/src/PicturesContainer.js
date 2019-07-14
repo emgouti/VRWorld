@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './userprofile.css'
+import './styles/userprofile.css'
 import { Card, Button, CardImg, CardTitle, CardText, CardColumns,
     CardSubtitle, CardBody } from 'reactstrap';
 import { Row, Col, Jumbotron, Container } from 'reactstrap';
-import './pictures.css'
+import './styles/pictures.css'
 
 
 

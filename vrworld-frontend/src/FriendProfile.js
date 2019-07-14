@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './userprofile.css'
+import './styles/userprofile.css'
 import PicturesContainer from './PicturesContainer'
 
 let user = null

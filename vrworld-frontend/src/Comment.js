@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-  import './comment.css'
+  import './styles/comment.css'
   import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Form,FormGroup, FormText, Label, Input } from 'reactstrap';
 
     export default class Comments extends React.Component  {

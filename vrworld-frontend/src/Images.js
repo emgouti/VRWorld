@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 import { Card, Button, CardImg, CardTitle, CardText, CardColumns,
     CardSubtitle, CardBody, FormGroup, FormText, Label, Input } from 'reactstrap';
 import { Container, Row, Col, Form} from 'reactstrap';
-import './images.css'
+import './styles/images.css'
 import Comment from './Comment'
 
 // const active = this.props.reset;

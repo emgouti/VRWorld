@@ -13,7 +13,7 @@ import Home from './Home'
 import Images from './Images'
 import Friends from './Friends'
 import FriendProfile from './FriendProfile'
-import './styles.css';
+import './styles/styles.css';
 
 
 const local = "127.0.0.1"

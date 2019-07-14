@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import './login.css'
+import './styles/login.css'
 import { Alert } from "react-bootstrap";
 
 class Login extends React.Component {

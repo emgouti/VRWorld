@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, CardImg, CardTitle, CardText, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
-import './friends.css'
+import './styles/friends.css'
 import AllUsers from './AllUsers'    
 
 let userFilter

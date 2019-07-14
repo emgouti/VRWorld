@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import './login.css'
+import './styles/login.css'
 
 export class SignUp extends React.Component {
   state =  { 
