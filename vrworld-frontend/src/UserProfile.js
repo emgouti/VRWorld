@@ -2,19 +2,12 @@ import React, { Component } from 'react';
 import './styles/userprofile.css'
 import PicturesContainer from './PicturesContainer'
 
-
-
 export default class UserProfile extends Component {
-
-    
     state = {
         images: [],
         favorites: [],
         currentImage: null,
-        profile_url: "",
-        // test1: [],
-        // test2: []
-       
+        profile_url: ""
     }
 
     componentDidMount(){
@@ -23,14 +16,13 @@ export default class UserProfile extends Component {
             'headers': {
               'Authorization': `Bearer ${this.props.token}`
             }
-          })
-       
+        })
         .then(res => res.json())
         .then(res => this.setState({
             images: res
         }))
        .then(this.profilePicFetch)
-        // .then(this.test)
+        //  .then(this.test)
     }
 
     // test = () => {
@@ -100,8 +92,6 @@ export default class UserProfile extends Component {
         
     }
 
-
-
     sendImageToBackend = () => {
         // debugger
        if(this.state.currentImage)
@@ -118,13 +108,9 @@ export default class UserProfile extends Component {
                 }
             )
         })
-        .then(this.resetState)
-        
+        .then(this.resetState)    
     }
 
-   
-    
-  
     uploadWidget = () => {
         window.cloudinary.openUploadWidget({ cloud_name: 'emmagouti', upload_preset: 'addimage', sources: [ 'local', 'url', 'image_search', 'camera', 'facebook', 'instagram', 'dropbox']}, (error, result) => {
             if (result.event === "success")
@@ -142,8 +128,6 @@ export default class UserProfile extends Component {
         }
         )
     }
-
-
          
     handleClick = () => {
         fetch(`http://${this.props.local}:3000/collections`,{
@@ -160,7 +144,6 @@ export default class UserProfile extends Component {
         })
     }
     
-  
     vrmode = () => {
         window.location.assign(`http://${this.props.local}:8081/index.html?user=${this.props.currentUser.id}&token=${this.props.token}`)
     }
@@ -202,14 +185,18 @@ export default class UserProfile extends Component {
     }
 
     render() {
-    // console.log("FUCKYEAH",this.state.test1, this.state.test2)
         return (
             <div >
-             
-                <PicturesContainer state={this.state} uploadWidget={this.uploadWidget} editWidget={this.editWidget} currentUser={this.props.currentUser} vrmode={this.vrmode} active={true} delete={this.delete}/>
-         
-         
-         </div>
+                <PicturesContainer 
+                    state={this.state} 
+                    uploadWidget={this.uploadWidget} 
+                    editWidget={this.editWidget} 
+                    currentUser={this.props.currentUser} 
+                    vrmode={this.vrmode} 
+                    active={true} 
+                    delete={this.delete}
+                />
+            </div>
         );
     }
 }

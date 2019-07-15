@@ -35,23 +35,28 @@ class Home extends React.Component {
  
 
   render() {
-    console.log(this.props.currentUser)
     return (
-   
-      
-    <div className="pack-page page0">
-        <QueueAnim className="home-title">
-          <div className="page-title" key="title">
-          <img style={{ width: '70%', height: 'auto' }} src="https://res.cloudinary.com/emmagouti/image/upload/v1551377379/logo2.jpg" alt=""/>
-
+        <div className="pack-page page0">
+            <QueueAnim className="home-title">
+              <div className="page-title" key="title">
+                <img 
+                  style={{ width: '70%', height: 'auto' }} 
+                  src="https://res.cloudinary.com/emmagouti/image/upload/v1551377379/logo2.jpg" 
+                  alt=""
+                />
+              </div>
+            </QueueAnim><br/>
+            <div>
+              {this.props.currentUser 
+                ? <div>
+                    <Link style={{color: 'black'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>
+                      Take me back to my photos!
+                    </Link>
+                  </div>  
+                : <LoginPop props={this.props.props} local={this.props.local}setUser={this.props.setUser} />
+              }
+            </div>
           </div>
-        </QueueAnim><br/>
-        <div>
-          {this.props.currentUser ? <div><Link style={{color: 'black'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Take me back to my photos!</Link></div>  :
-        <LoginPop props={this.props.props} local={this.props.local}setUser={this.props.setUser} />
-      }
-        </div>
-      </div>
      
        
     //    <Jumbotron>
@@ -63,11 +68,8 @@ class Home extends React.Component {
     //      <Button color="primary">Get Started</Button>
     //    </p>
     //  </Jumbotron>
-    
-    
-
-  )
-            } 
+      )
+    } 
 }
 
 export default Home;
