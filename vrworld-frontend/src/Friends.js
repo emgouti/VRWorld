@@ -70,7 +70,7 @@ import './styles/friends.css'
         }
 
         removeFollower = (friend) => {
-            fetch(`http://${this.props.local}:3000/${friend.username}/unfollow_user`, {
+            fetch(`http://${this.props.local}:3000/${friend.following.username}/unfollow_user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -96,45 +96,44 @@ import './styles/friends.css'
         render(){
             return (
                 <div>    
-                    <div>
+                    <div className="search-bar">
                         {/* search bar */}
                         <InputGroup>
-                        <Input className="search" onChange={(e) => this.filter(e)} placeholder="Search Users..."/>
-                        <InputGroupAddon addonType="append">
-                        <Button color="dark" size="xs">Search</Button>
-                        </InputGroupAddon>
+                            <Input className="search" onChange={(e) => this.filter(e)} placeholder="Search Users..."/>
+                            <InputGroupAddon addonType="append">
+                            <Button color="dark" size="xs">Search</Button>
+                            </InputGroupAddon>
                         </InputGroup>
                     </div>
                     <div>
                         <h3 style={{textAlign: "center"}}>Following</h3>
-                        {this.state.follows.length < 1 
+                            {this.state.follows.length < 1 
                             ?
                             <h3 textAlign="center">You're not following anyone!</h3> 
                             :
-                            <div className="card">
+                            <div className="following">
                                 <Row>
                                     {this.state.follows
-                                        .filter(follow => follow.follower_id === this.props.currentUser.id && follow.following.name.toLowerCase()
-                                        .includes(this.state.search.toLowerCase()))
+                                        .filter(follow => 
+                                            follow.follower_id === this.props.currentUser.id 
+                                            && follow.following.name.toLowerCase().includes(this.state.search.toLowerCase()))
                                         .map(follow => (
                                                 <Col sm="6">
                                                     <Card body style={{textAlign: "center"}}>
-                                                    
-                                                    <CardImg top width="100%" src={follow.following.profile_url} alt="Card image cap" />
-                                                    <CardTitle onClick={() => this.goToFriendsPage(follow.following.id)}>
-                                                    <span>{follow.following.name}</span>
-                                                        
+                                                        <CardImg top width="100%" src={follow.following.profile_url} alt="Card image cap"/>
+                                                        <CardTitle onClick={() => this.goToFriendsPage(follow.following.id)}>
+                                                            <span>{follow.following.name}</span> 
                                                         </CardTitle>
-                                                    <Button onClick={(e) => this.removeFollower(follow.following)}>Unfollow</Button>
+                                                        <Button onClick={(e) => this.removeFollower(follow)}>Unfollow</Button>
                                                     </Card>
                                                 </Col>
                                         ))
                                     }
                                 </Row> 
                             </div> 
-                        }
+                            }
                         <h3 style={{textAlign: "center"}}>All Users</h3>
-                        <div className="card2">
+                        <div className="users">
                             <Row>
                                 {this.state.users
                                     .filter(user => user.name.toLowerCase()
@@ -150,7 +149,17 @@ import './styles/friends.css'
                                                 <CardTitle onClick={() => this.goToFriendsPage(user.id)}>
                                                     <span>{user.name}</span>
                                                 </CardTitle>
-                                                <Button onClick={(e) => this.addFollower(user)}>Follow</Button>
+                                                    {this.state.follows.length > 0 
+                                                        ?
+                                                        // return boolean if user is in follows array
+                                                        !!this.state.follows.find(follow => follow.following_id === user.id) 
+                                                        ?
+                                                        <Button onClick={(e) => this.removeFollower(this.state.follows.find(follow => follow.following_id === user.id))}>Unfollow</Button>
+                                                        :
+                                                        <Button onClick={(e) => this.addFollower(user)}>Follow</Button>
+                                                        :
+                                                        <Button onClick={(e) => this.addFollower(user)}>Follow</Button>
+                                                    }    
                                             </Card>
                                         </Col>  
                                     ))
