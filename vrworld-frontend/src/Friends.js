@@ -121,7 +121,7 @@ import './styles/friends.css'
                                                 <Col sm="6">
                                                     <Card body style={{textAlign: "center"}}>
                                                         <CardImg top width="100%" src={follow.following.profile_url} alt="Card image cap"/>
-                                                        <CardTitle onClick={() => this.goToFriendsPage(follow.following.id)}>
+                                                        <CardTitle onClick={() => this.goToFriendsPage(follow.following)}>
                                                             <span>{follow.following.name}</span> 
                                                         </CardTitle>
                                                         <Button onClick={(e) => this.removeFollower(follow)}>Unfollow</Button>
@@ -146,7 +146,7 @@ import './styles/friends.css'
                                         <Col sm="6">
                                             <Card style={{textAlign: "center"}} body >
                                                 <CardImg top width="100%" src={user.profile_url} alt="Card image cap" />
-                                                <CardTitle onClick={() => this.goToFriendsPage(user.id)}>
+                                                <CardTitle onClick={() => this.goToFriendsPage(user)}>
                                                     <span>{user.name}</span>
                                                 </CardTitle>
                                                     {this.state.follows.length > 0 
