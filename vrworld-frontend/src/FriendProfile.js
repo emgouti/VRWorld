@@ -17,42 +17,33 @@ export default class FriendProfile extends Component {
 
     
     componentDidMount(){
-        
-       user = this.state.user.split('/')[2]
-       
-
+        user = this.state.user.split('/')[2]
         fetch(`http://${this.props.local}:3000/users/${user}/images`, {
             'method': 'GET',
             'headers': {
-              'Authorization': `Bearer ${this.props.token}`
+                'Authorization': `Bearer ${this.props.token}`
             }
-          })
-       
+            })
         .then(res => res.json())
         .then(res => this.setState({
             images: res
         }))
-        
         .then(this.profilePicFetch)
-        
     }
 
 
     profilePicFetch = () => {
-        console.log()
         fetch(`http://${this.props.local}:3000/users/${user}`, {
             'method': 'GET',
             'headers': {
               'Authorization': `Bearer ${this.props.token}`
             }
           })
-       
         .then(res => res.json())
         .then(res => this.setState({
             userObj: res,
             profile_url: res.profile_url
-        }))
-        
+        }))   
     }
 
 
@@ -78,15 +69,10 @@ export default class FriendProfile extends Component {
         window.location.assign(`http://${this.props.local}:8081/index.html?user=${user}&token=${this.props.token}`)
     }
 
-
-
-
     render() {
-    console.log("user", this.state.userObj, "url", this.state.URL)
         return (
             <div >
                 <PicturesContainer state={this.state} currentUser={this.state.userObj} vrmode={this.vrmode} active={false}/>
-               
                 }
                
                 
