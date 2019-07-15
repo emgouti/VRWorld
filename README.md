@@ -1,2 +1,2 @@
 # VRWorld
-React, React360, Rails API, JSON Web Tokens, Rails, Ruby, PostgreSQL, Cloudinary
+Final project from Flatiron School Software Engineering Immersive
