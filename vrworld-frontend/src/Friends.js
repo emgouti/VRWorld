@@ -106,7 +106,7 @@ import './styles/friends.css'
                         </InputGroup>
                     </div>
                     <div>
-                        <h3 style={{textAlign: "center"}}>Following</h3>
+                        <h5 style={{textAlign: "center"}}>Following</h5>
                             {this.state.follows.length < 1 
                             ?
                             <h3 textAlign="center">You're not following anyone!</h3> 
