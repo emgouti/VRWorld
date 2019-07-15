@@ -17,6 +17,7 @@ import './styles/styles.css';
 
 
 const local = "127.0.0.1"
+// const local = '192.168.2.127'
 
 class App extends Component {
 
@@ -25,8 +26,6 @@ class App extends Component {
     token: localStorage.getItem('token'),
     user: JSON.parse(localStorage.getItem('user')) || null,
     message: ""
-
-    
   }
 
   reset = () => {

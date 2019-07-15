@@ -12,6 +12,7 @@ export default class PicturesContainer extends Component {
                <div className="user">
                 {this.props.active === true
                     ?
+                    // show current User's profile
                     <div> 
                         <div className="main">
                             <div className="big">
@@ -81,6 +82,7 @@ export default class PicturesContainer extends Component {
                         </div>
                      </div>
                      :
+                    //  show friend's profile
                      <div> 
                         <div className="main">
                             <div className="big">
@@ -110,8 +112,16 @@ export default class PicturesContainer extends Component {
                                     this.props.state.images.map(image => (
                                         <Col sm="6">
                                             <Card body style={{textAlign: "center"}}>
-                                                <CardImg top height="70%" width="70%" src={image.img_url} alt="Card image cap" />
-                                                <CardTitle>Uploaded By: {this.props.currentUser.name}</CardTitle>
+                                                <CardImg 
+                                                    top 
+                                                    height="70%" 
+                                                    width="70%" 
+                                                    src={image.img_url} 
+                                                    alt="Card image cap" 
+                                                />
+                                                <CardTitle>
+                                                    Uploaded By: {this.props.currentUser.name}
+                                                </CardTitle>
                                                 <Button onClick={e => this.props.delete(image.id)}>Delete</Button>
                                             </Card>
                                         </Col>

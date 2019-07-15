@@ -39,8 +39,11 @@ class Home extends React.Component {
         <div className="pack-page page0">
             <QueueAnim className="home-title">
               <div className="page-title" key="title">
-              <img style={{ width: '70%', height: 'auto' }} src="https://res.cloudinary.com/emmagouti/image/upload/v1551377379/logo2.jpg" alt=""/>
-
+                <img 
+                  style={{ width: '70%', height: 'auto' }} 
+                  src="https://res.cloudinary.com/emmagouti/image/upload/v1551377379/logo2.jpg" 
+                  alt=""
+                />
               </div>
             </QueueAnim><br/>
             <div>
@@ -65,11 +68,8 @@ class Home extends React.Component {
     //      <Button color="primary">Get Started</Button>
     //    </p>
     //  </Jumbotron>
-    
-    
-
-  )
-            } 
+      )
+    } 
 }
 
 export default Home;
