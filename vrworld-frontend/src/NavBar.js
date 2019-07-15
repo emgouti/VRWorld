@@ -7,7 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import LoginPop from './LoginPop';
 
@@ -30,37 +33,49 @@ export default class NavBar extends React.Component {
     console.log(this.props)
     return (
       <div>
-        <Navbar color="dark" light expand="md">
-          <NavbarBrand style={{color: "white"}} href="/">VR WORLD</NavbarBrand>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand style={{color: "black"}} href="/">VR WORLD</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
               {
                 this.props.currentUser
                 ?
                   <Nav className="ml-auto" navbar>
-                  <NavItem>
-                      <NavLink>
-                        <Link style={{color: 'white'}} to="/images"> All Images </Link> 
-                      </NavLink>
-                    </NavItem>
-                 <NavItem>
-                      <NavLink>
-                        <Link style={{color: 'white'}} to="/friends"> My Friends </Link> 
-                      </NavLink>
-                    </NavItem>
-
+                    <NavItem>
+                        <NavLink>
+                          <Link style={{color: 'black'}} to="/images"> Explore </Link> 
+                        </NavLink>
+                      </NavItem>
                     <NavItem>
                       <NavLink>
-                        <Link style={{color: 'white'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>{this.props.currentUser.name}</Link> 
+                        <Link style={{color: 'black'}} to="/friends"> All Users </Link> 
                       </NavLink>
                     </NavItem>
-                    <div onClick={ this.props.logout }>
-                    <NavItem >
-                      <NavLink>
-                        <Link style={{color: 'white'}} to='/' > Logout </Link> 
-                      </NavLink>
-                    </NavItem>
-                    </div>
+                    <UncontrolledDropdown nav inNavbar>
+                        <DropdownToggle nav caret>
+                          {this.props.currentUser.name}
+                        </DropdownToggle>
+                        <DropdownMenu right>
+                          <DropdownItem>
+                            <NavLink>
+                              <Link style={{color: 'grey'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Profile</Link> 
+                            </NavLink>
+                          </DropdownItem>
+                          <DropdownItem>
+                            My Friends
+                          </DropdownItem>
+                          <DropdownItem divider />
+                          <DropdownItem>
+                            <div onClick={ this.props.logout }>
+                              <NavItem >
+                                <NavLink>
+                                  <Link style={{color: 'black'}} to='/' > Logout </Link> 
+                                </NavLink>
+                              </NavItem>
+                            </div>
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
                   </Nav>
                 
                 :
