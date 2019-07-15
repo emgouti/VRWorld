@@ -12,7 +12,6 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import LoginPop from './LoginPop';
 
 
 export default class NavBar extends React.Component {
@@ -34,7 +33,7 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand style={{color: "black"}} href="/">VR WORLD</NavbarBrand>
+          <NavbarBrand style={{color: "black", fontWeight: 'bold'}} href="/">V R W o r l d</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
               {
@@ -77,13 +76,11 @@ export default class NavBar extends React.Component {
                         </DropdownMenu>
                       </UncontrolledDropdown>
                   </Nav>
-                
                 :
                   <Nav className="ml-auto" navbar>
                     <NavItem>
                     <div onClick={ this.props.login }>
                     <NavItem >
-                      {/* <LoginPop /> */}
                       <NavLink>
                         <Link style={{color: 'white'}} to="/login"> Login </Link> 
                       </NavLink>
@@ -97,7 +94,6 @@ export default class NavBar extends React.Component {
                     </NavItem>
                   </Nav>
               }
-    
           </Collapse>
         </Navbar>
       </div>
