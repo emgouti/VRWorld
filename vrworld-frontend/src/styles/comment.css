@@ -1,7 +1,6 @@
 span {
     cursor:pointer;
     color:darkblue;
-    /* text-decoration:underline; */
     text-shadow: .5px .5px .5px rgb(7, 135, 194);
 }
 
@@ -12,4 +11,36 @@ span:hover {
 
 * {
   box-sizing: border-box;
+}
+
+.delete {
+    padding-top: 5%;
+    padding-right: 3%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+}
+
+.edit {
+    padding-top: 5%;
+    padding-right: 3%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+}
+
+.comment {
+    padding-top: 0%;
+    padding-right: 3%;
+    padding-bottom: 0%;
+    padding-left: 3%;
+}
+
+.date {
+    padding-top: 0%;
+    padding-right: 3%;
+    padding-bottom: 0%;
+    padding-left: 3%;
+}
+
+.comment-box {
+    padding-top: 0%;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './styles/userprofile.css'
-import PicturesContainer from './PicturesContainer'
+import '../styles/userprofile.css'
+import PicturesContainer from '../components/PicturesContainer'
 
 let user = null
 

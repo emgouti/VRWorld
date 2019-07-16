@@ -1,13 +1,9 @@
 import React from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
-import './styles/friends.css'   
-
+import { Card, Button, CardImg, CardTitle, Row, Col } from 'reactstrap';
+import '../styles/friends.css'   
 
 export default class Followers extends React.Component  {
-
-
         render(){
-            console.log(this.props.users, this.props.follows)
             return(
                 <div>
                    <h3 style={{textAlign: "center"}}>Following</h3>
@@ -15,7 +11,7 @@ export default class Followers extends React.Component  {
                    ?
                     <h3 textAlign="center">You're not following anyone!</h3> 
                     :
-                <div className="card">
+                    <div className="card">
                    <Row>
                    {this.props.follows.filter(follow => follow.follower_id === this.props.currentUser.id && follow.following.name.toLowerCase().includes(this.props.search)).map(follow => (
                       
@@ -30,7 +26,6 @@ export default class Followers extends React.Component  {
                           <Button onClick={(e) => this.removeFollower(follow.following)}>Unfollow</Button>
                           </Card>
                       </Col>
-                     
                    ))}
                    </Row> 
                    </div> }

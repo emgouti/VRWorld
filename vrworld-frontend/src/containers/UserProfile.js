@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './styles/userprofile.css'
-import PicturesContainer from './PicturesContainer'
+import PicturesContainer from '../components/PicturesContainer'
+import '../styles/userprofile.css'
 
 export default class UserProfile extends Component {
     state = {

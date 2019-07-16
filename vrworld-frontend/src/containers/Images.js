@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import { Route, Link} from 'react-router-dom'
-import NavBar from './NavBar'
-import { Card, Button, CardImg, CardTitle, CardText, CardColumns,
-    CardSubtitle, CardBody, FormGroup, FormText, Label, Input } from 'reactstrap';
-import { Container, Row, Col, Form} from 'reactstrap';
-import './styles/images.css'
-import Comment from './Comment'
+import { Card, Button, CardImg, CardTitle, CardBody, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Col, Form} from 'reactstrap';
+import '../styles/images.css'
+import Comment from '../components/Comment'
 
-// const active = this.props.reset;
 export default class Images extends Component {
 
     state = {
@@ -46,6 +42,7 @@ export default class Images extends Component {
             users: res
         }))
     }
+
     fetchComments = () => {
       fetch(`http://${this.props.local}:3000/comments`, {
         'method': 'get',
@@ -131,56 +128,39 @@ export default class Images extends Component {
   }
 
     render() {
-        let name;
-    //    console.log(this.state.images) 
-    //    console.log("user", this.state.users)
-        // console.log("THISISIT",this.state.images.map(image => {
-        //     return(this.state.users.find( user => {
-        //         return (user.id === image.creator_id)
-        //     }))
-        // }))
-console.log(this.props.currentUser.name)
         return (
-
-            
-
         <div className="flexcontainer">
              <Row>
              {this.state.images.map((image) => (
-                      <Col sm="6">
-                          <Card body style={{textAlign: "center"}}>
-                          <CardImg top height="70%" width="70%" src={image.img_url} alt="Card image cap" />
-                          
+                <Col sm="6">
+                  <Card body style={{textAlign: "center"}}>
+                    <CardImg top height="70%" width="70%" src={image.img_url} alt="Card image cap" />  
                         {this.state.users.length > 0 ? 
-                            <CardTitle>
-                               Uploaded By: {this.state.users.find( user => {
-                                    return user.id === image.creator_id
-                                }).name}
-                            </CardTitle>
+                          <CardTitle>
+                              Uploaded By: {this.state.users.find( user => {
+                                  return user.id === image.creator_id
+                              }).name}
+                          </CardTitle>
                         : null}
-                          <br/><Button onClick={() => this.handleClick(image.id)}>Add to my collection</Button>
+                          <br/>
+                          <Button onClick={() => this.handleClick(image.id)}>Add to my collection</Button>
                           <CardBody className="body" style={{width: "100%", textAlign: "left"}}>
                           <div>
-                          <Comment users={this.state.users} getComment={this.getComment} edit={this.edit}currentUser={this.props.currentUser} delete={this.delete} comments={this.state.comments.filter(comment => comment.image_id === image.id)} />
-                          <Form onSubmit={() => this.submitComment(image.id)}>
-                          <FormGroup>
-                      <Label for="exampleText">Drop a Comment!</Label>
-                      <Input onChange={(e) => this.getComment(e)}type="textarea" name="text" id="exampleText" />
-                    </FormGroup>
-                    <Button>Submit!</Button>
-                    </Form>
-                    </div>
+                            <Comment users={this.state.users} getComment={this.getComment} edit={this.edit}currentUser={this.props.currentUser} delete={this.delete} comments={this.state.comments.filter(comment => comment.image_id === image.id)} />
+                            <Form onSubmit={() => this.submitComment(image.id)}>
+                              <FormGroup>
+                                <Label for="exampleText">Drop a Comment!</Label>
+                                <Input onChange={(e) => this.getComment(e)}type="textarea" name="text" id="exampleText" />
+                              </FormGroup>
+                              <Button>Submit!</Button>
+                            </Form>
+                          </div>
                           </CardBody>
-                          </Card>
-                          
+                          </Card> 
                       </Col>
                      ))}
-                        </Row> 
-                                
-                       
-          
-        </div>
-        
+                  </Row>  
+              </div>
         )
     }
 }

@@ -6,14 +6,13 @@ import { Switch } from 'react-router'
 import Login from './Login'
 import SignUp from './SignUp'
 import UserProfile from './UserProfile'
-import NavBar from './NavBar'
-import Home from './Home'
+import NavBar from '../components/NavBar'
+import Home from '../components/Home'
 import Images from './Images'
 import Friends from './Friends'
 import FriendProfile from './FriendProfile'
 
-import './styles/styles.css';
-
+import '../styles/styles.css';
 
 const local = "127.0.0.1"
 // const local = '192.168.2.127'

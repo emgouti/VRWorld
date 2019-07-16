@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, CardImg, CardTitle, CardText, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
-import './styles/friends.css'
+import '../styles/friends.css'
 
     export default class Friends extends React.Component  {
 
