@@ -14,7 +14,6 @@ export default class Followers extends React.Component  {
                     <div className="card">
                    <Row>
                    {this.props.follows.filter(follow => follow.follower_id === this.props.currentUser.id && follow.following.name.toLowerCase().includes(this.props.search)).map(follow => (
-                      
                       <Col sm="6">
                           <Card body style={{textAlign: "center"}}>
                           
@@ -30,8 +29,6 @@ export default class Followers extends React.Component  {
                    </Row> 
                    </div> }
                 </div>
-
-
             )
         }
 

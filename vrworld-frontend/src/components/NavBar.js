@@ -60,9 +60,9 @@ export default class NavBar extends React.Component {
                               <Link style={{color: 'grey'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Profile</Link> 
                             </NavLink>
                           </DropdownItem>
-                          <DropdownItem>
+                          {/* <DropdownItem>
                             My Friends
-                          </DropdownItem>
+                          </DropdownItem> */}
                           <DropdownItem divider />
                           <DropdownItem>
                             <div onClick={ this.props.logout }>
