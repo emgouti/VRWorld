@@ -71,12 +71,9 @@ export default class FriendProfile extends Component {
 
     render() {
         return (
-            <div >
+            <div>
                 <PicturesContainer state={this.state} currentUser={this.state.userObj} vrmode={this.vrmode} active={false}/>
-                }
-               
-                
-         </div>
+            </div>
         );
     }
 }
