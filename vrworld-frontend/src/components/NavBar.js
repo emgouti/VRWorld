@@ -33,7 +33,7 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand style={{color: "black", fontWeight: 'bold'}} href="/">V R W o r l d</NavbarBrand>
+          <NavbarBrand style={{color: "black", 'font-size': '25px'}} href="/">V R W o r l d</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
               {

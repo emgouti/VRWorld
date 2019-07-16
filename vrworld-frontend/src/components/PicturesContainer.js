@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import './styles/userprofile.css'
+
 import { Card, Button, CardImg, CardTitle } from 'reactstrap';
 import { Row, Col, Jumbotron, Container } from 'reactstrap';
-import './styles/pictures.css'
+
+import '../styles/userprofile.css'
+import '../styles/pictures.css'
 
 export default class PicturesContainer extends Component {
 

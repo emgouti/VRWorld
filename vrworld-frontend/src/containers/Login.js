@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import './styles/login.css'
+import '../styles/login.css'
 import { Alert } from "react-bootstrap";
 
 class Login extends React.Component {
@@ -22,12 +22,11 @@ class Login extends React.Component {
     }
   
   
-    errorBox() {
-      
-      if (  this.state.errors) {
+    errorBox() { 
+      if (this.state.errors) {
         return (
           <Alert role="alert">
-            {  this.state.errors}
+            {this.state.errors}
           </Alert>
         )    
       }
@@ -59,40 +58,30 @@ class Login extends React.Component {
     
     
       render() {
-
-
         return (
           <div>
-              {this.errorBox()}
-            
-          <div class="login">
-            
-
-          <h1>Login</h1>
-              <Form onSubmit={this.login}>
-                <FormGroup row>
-                <Label for="exampleEmail" sm={2} size="lg">UserName</Label>
-                <Col sm={10}>
-                    <Input onChange={this.handleChange} value={this.state.username} name="username" type="text" placeholder="UserName" bsSize="lg" />
-                </Col>
-                </FormGroup>
-                <FormGroup row>
-                <Label for="exampleEmail2" sm={2}>Password</Label>
-                <Col sm={10}>
-                    <Input onChange={this.handleChange} value={this.state.password} name="password" type="password" placeholder="Password" />
-                </Col>
-                </FormGroup>
-                <Button type="submit" >Submit</Button>
-            </Form>
-
-
-            
-          </div>
-          </div>
-        )
-      }
-    
-      
+            {this.errorBox()}  
+            <div class="login">
+              <h1>Login</h1>
+                  <Form onSubmit={this.login}>
+                    <FormGroup row>
+                      <Label for="exampleEmail" sm={2} size="lg">UserName</Label>
+                        <Col sm={10}>
+                          <Input onChange={this.handleChange} value={this.state.username} name="username" type="text" placeholder="UserName" bsSize="lg" />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                      <Label for="exampleEmail2" sm={2}>Password</Label>
+                        <Col sm={10}>
+                            <Input onChange={this.handleChange} value={this.state.password} name="password" type="password" placeholder="Password" />
+                        </Col>
+                    </FormGroup>
+                    <Button type="submit" >Submit</Button>
+                </Form>
+            </div>
+        </div>
+      )
+    }   
 }
 
 

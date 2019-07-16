@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import './styles/userprofile.css'
-import PicturesContainer from './PicturesContainer'
+import '../styles/userprofile.css'
+import PicturesContainer from '../components/PicturesContainer'
 
 let user = null
 
-
 export default class FriendProfile extends Component {
 
-    
     state = {
         user: window.location.pathname,
         userObj: [],
         images: [],
         profile_url: ""
     }
-
     
     componentDidMount(){
         user = this.state.user.split('/')[2]
@@ -31,7 +28,6 @@ export default class FriendProfile extends Component {
         .then(this.profilePicFetch)
     }
 
-
     profilePicFetch = () => {
         fetch(`http://${this.props.local}:3000/users/${user}`, {
             'method': 'GET',
@@ -45,10 +41,6 @@ export default class FriendProfile extends Component {
             profile_url: res.profile_url
         }))   
     }
-
-
-
-
          
     handleClick = () => {
         fetch(`http://${this.props.local}:3000/collections`,{
@@ -71,12 +63,9 @@ export default class FriendProfile extends Component {
 
     render() {
         return (
-            <div >
+            <div>
                 <PicturesContainer state={this.state} currentUser={this.state.userObj} vrmode={this.vrmode} active={false}/>
-                }
-               
-                
-         </div>
+            </div>
         );
     }
 }

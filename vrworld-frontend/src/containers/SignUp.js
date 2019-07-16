@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import './styles/login.css'
+import '../styles/login.css'
 
 export class SignUp extends React.Component {
   state =  { 
@@ -8,7 +8,7 @@ export class SignUp extends React.Component {
         email: "", 
         password: "" , 
         name: "" ,
-        profile_url: "https://res.cloudinary.com/emmagouti/image/upload/v1551589375/newimages/profile-placeholder.png"
+        profile_url: "https://res.cloudinary.com/emmagouti/image/upload/v1551589342/profilepics/oxqxv9y5jeypxmhxifw5.png"
     }
     
 
