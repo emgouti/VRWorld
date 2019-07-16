@@ -57,7 +57,7 @@ export default class NavBar extends React.Component {
                         <DropdownMenu right>
                           <DropdownItem>
                             <NavLink>
-                              <Link style={{color: 'grey'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Profile</Link> 
+                              <Link style={{color: 'gray'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Profile</Link> 
                             </NavLink>
                           </DropdownItem>
                           {/* <DropdownItem>
@@ -82,14 +82,14 @@ export default class NavBar extends React.Component {
                     <div onClick={ this.props.login }>
                     <NavItem >
                       <NavLink>
-                        <Link style={{color: 'white'}} to="/login"> Login </Link> 
+                        <Link style={{color: 'gray'}} to="/login"> Login </Link> 
                       </NavLink>
                     </NavItem>
                     </div>
                     </NavItem>
                     <NavItem>
                       <NavLink>
-                        <Link style={{color: 'white'}} to="/signup"> Sign Up </Link> 
+                        <Link style={{color: 'gray'}} to="/signup"> Sign Up </Link> 
                       </NavLink>
                     </NavItem>
                   </Nav>

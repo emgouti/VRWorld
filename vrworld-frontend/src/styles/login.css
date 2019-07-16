@@ -4,3 +4,12 @@
     padding-bottom: 7%;
     padding-left: 20%;
   }
+
+  .container {
+    height: 10em;
+    position: relative
+  }
+
+  .container p {
+    margin: 0
+  }

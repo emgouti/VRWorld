@@ -60,24 +60,26 @@ class Login extends React.Component {
       render() {
         return (
           <div>
-            {this.errorBox()}  
+            <h1>Login</h1>
             <div class="login">
-              <h1>Login</h1>
+              <div className="container">
+                <p align="center">Please login to access your photos</p><br />
                   <Form onSubmit={this.login}>
                     <FormGroup row>
-                      <Label for="exampleEmail" sm={2} size="lg">UserName</Label>
-                        <Col sm={10}>
-                          <Input onChange={this.handleChange} value={this.state.username} name="username" type="text" placeholder="UserName" bsSize="lg" />
+                      <Label for="exampleEmail" sm={2}></Label>
+                        <Col sm={8}>
+                          <Input onChange={this.handleChange} value={this.state.username} name="username" type="text" placeholder="username" />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
-                      <Label for="exampleEmail2" sm={2}>Password</Label>
-                        <Col sm={10}>
-                            <Input onChange={this.handleChange} value={this.state.password} name="password" type="password" placeholder="Password" />
+                      <Label for="exampleEmail2" sm={2}></Label>
+                        <Col sm={8}>
+                            <Input onChange={this.handleChange} value={this.state.password} name="password" type="password" placeholder="password" />
                         </Col>
+                      <Button align="center" type="submit" >Login!</Button>
                     </FormGroup>
-                    <Button type="submit" >Submit</Button>
                 </Form>
+                </div>
             </div>
         </div>
       )

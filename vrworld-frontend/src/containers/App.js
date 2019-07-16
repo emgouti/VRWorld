@@ -76,7 +76,8 @@ class App extends Component {
           <React.Fragment>
             <NavBar currentUser={this.state.user} logout={this.logoutUser}/>
               <Switch>
-                    <Route path="/login" render={(props) => <Login {...props} local={local} setUser={this.setCurrentUser} />} />          
+                    <Route path="/login" render={(props) => <Login {...props} local={local} setUser={this.setCurrentUser} />} />
+                    <Route path="/login" render={(props) => <Login {...props} local={local} setUser={this.setCurrentUser} />} />            
                     <Route path="/signup" render={ props => <SignUp {...props} local={local} onSignUp={this.setCurrentUser} />}/>
                     <Route path="/friends" render={ props => <Friends {...props} local={local} token={this.state.token} currentUser={this.state.user} />}/>
                     <Route path="/users/:id/UserProfile" component={props => <UserProfile local={local} {...props} token={this.state.token} setCurrentUser={this.login} reset={this.reset} currentUser={this.state.user}/>} />
