@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
+import { Card, Button, CardImg, CardTitle, CardGroup, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 import '../styles/friends.css'
 
     export default class Friends extends React.Component  {
@@ -118,14 +118,16 @@ import '../styles/friends.css'
                                             follow.follower_id === this.props.currentUser.id 
                                             && follow.following.name.toLowerCase().includes(this.state.search.toLowerCase()))
                                         .map(follow => (
-                                                <Col sm="6">
-                                                    <Card body style={{textAlign: "center"}}>
-                                                        <CardImg top width="100%" src={follow.following.profile_url} alt="Card image cap"/>
-                                                        <CardTitle onClick={() => this.goToFriendsPage(follow.following)}>
-                                                            <span>{follow.following.name}</span> 
-                                                        </CardTitle>
-                                                        <Button onClick={(e) => this.removeFollower(follow)}>Unfollow</Button>
-                                                    </Card>
+                                                <Col sm="3">
+                                                    <CardGroup>
+                                                        <Card body style={{textAlign: "center"}}>
+                                                            <CardImg top width="100%" src={follow.following.profile_url} alt="Card image cap"/>
+                                                            <CardTitle onClick={() => this.goToFriendsPage(follow.following)}>
+                                                                <span>{follow.following.name}</span> 
+                                                            </CardTitle>
+                                                            <Button onClick={(e) => this.removeFollower(follow)}>Unfollow</Button>
+                                                        </Card>
+                                                    </CardGroup>
                                                 </Col>
                                         ))
                                     }
@@ -143,7 +145,7 @@ import '../styles/friends.css'
                                         ?
                                         null
                                         :
-                                        <Col sm="6">
+                                        <Col sm="3">
                                             <Card style={{textAlign: "center"}} body >
                                                 <CardImg top width="100%" src={user.profile_url} alt="Card image cap" />
                                                 <CardTitle onClick={() => this.goToFriendsPage(user)}>
