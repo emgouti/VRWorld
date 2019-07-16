@@ -30,7 +30,7 @@ export default class PicturesContainer extends Component {
                                                 />
                                             </Card>
                                         </div>
-                                        <h1  className="display-3">Welcome, {this.props.currentUser.name}.</h1>
+                                        <h1  className="display-5">Welcome, {this.props.currentUser.name.split(' ')[0]}!</h1>
                                         <p className="lead">Upload your images and view them in VR.</p>
                                             <Button 
                                                 onClick={this.props.editWidget} 
@@ -59,6 +59,7 @@ export default class PicturesContainer extends Component {
                                     </Container>
                                 </Jumbotron>
                             </div>
+                            {/* RENDERING IMAGES*/}
                             <div className="small">
                                 <Row>
                                     {this.props.state.images 
@@ -84,7 +85,7 @@ export default class PicturesContainer extends Component {
                         </div>
                      </div>
                      :
-                    //  show friend's profile
+                    //  REDNERING FRIEND'S PROFILE & IMAGES
                      <div> 
                         <div className="main">
                             <div className="big">

@@ -33,7 +33,7 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand style={{color: "black", 'font-size': '25px'}} href="/">V R W o r l d</NavbarBrand>
+          <NavbarBrand style={{color: "black", 'fontSize': '25px'}} href="/">V R W o r l d</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
               {
@@ -57,12 +57,12 @@ export default class NavBar extends React.Component {
                         <DropdownMenu right>
                           <DropdownItem>
                             <NavLink>
-                              <Link style={{color: 'grey'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Profile</Link> 
+                              <Link style={{color: 'gray'}} to={`/users/${this.props.currentUser.id}/UserProfile`}>Profile</Link> 
                             </NavLink>
                           </DropdownItem>
-                          <DropdownItem>
+                          {/* <DropdownItem>
                             My Friends
-                          </DropdownItem>
+                          </DropdownItem> */}
                           <DropdownItem divider />
                           <DropdownItem>
                             <div onClick={ this.props.logout }>
@@ -82,14 +82,14 @@ export default class NavBar extends React.Component {
                     <div onClick={ this.props.login }>
                     <NavItem >
                       <NavLink>
-                        <Link style={{color: 'white'}} to="/login"> Login </Link> 
+                        <Link style={{color: 'gray'}} to="/login"> Login </Link> 
                       </NavLink>
                     </NavItem>
                     </div>
                     </NavItem>
                     <NavItem>
                       <NavLink>
-                        <Link style={{color: 'white'}} to="/signup"> Sign Up </Link> 
+                        <Link style={{color: 'gray'}} to="/signup"> Sign Up </Link> 
                       </NavLink>
                     </NavItem>
                   </Nav>
