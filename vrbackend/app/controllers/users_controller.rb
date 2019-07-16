@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
     before_action :define_selected_user
-
     skip_before_action :authenticate, only: [ :create, :current, :images]
 
     def imagesandcomment
@@ -16,7 +15,6 @@ class UsersController < ApplicationController
     end
 
     def following
-       
         render json: Follow.all, methods: [:following]
     end
 
