@@ -15,7 +15,7 @@ export default class FriendProfile extends Component {
     
     componentDidMount(){
         user = this.state.user.split('/')[2]
-        fetch(`http://${this.props.local}:3000/users/${user}/images`, {
+        fetch(`https://vrworld-back.herokuapp.com/users/${user}/images`, {
             'method': 'GET',
             'headers': {
                 'Authorization': `Bearer ${this.props.token}`
@@ -29,7 +29,7 @@ export default class FriendProfile extends Component {
     }
 
     profilePicFetch = () => {
-        fetch(`http://${this.props.local}:3000/users/${user}`, {
+        fetch(`https://vrworld-back.herokuapp.com/users/${user}`, {
             'method': 'GET',
             'headers': {
               'Authorization': `Bearer ${this.props.token}`
@@ -43,7 +43,7 @@ export default class FriendProfile extends Component {
     }
          
     handleClick = () => {
-        fetch(`http://${this.props.local}:3000/collections`,{
+        fetch(`https://vrworld-back.herokuapp.com/collections`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

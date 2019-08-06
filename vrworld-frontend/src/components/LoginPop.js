@@ -48,7 +48,7 @@ class LoginPop extends React.Component {
 
       login = e => {
         e.preventDefault();
-        fetch(`http://${this.props.local}:3000/auth` , {
+        fetch(`https://vrworld-back.herokuapp.com/auth` , {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

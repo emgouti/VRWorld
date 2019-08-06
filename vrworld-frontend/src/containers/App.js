@@ -48,10 +48,11 @@ class App extends Component {
     
     login = e => {
       e.preventDefault();
-      fetch(`http://${local}:3000/auth` , {
+      fetch(`https://vrworld-back.herokuapp.com/auth` , {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
           username: this.state.username,

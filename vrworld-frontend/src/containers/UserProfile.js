@@ -11,7 +11,7 @@ export default class UserProfile extends Component {
     }
 
     componentDidMount(){
-        fetch(`http://${this.props.local}:3000/users/${this.props.currentUser.id}/images`, {
+        fetch(`https://vrworld-back.herokuapp.com/users/${this.props.currentUser.id}/images`, {
             'method': 'GET',
             'headers': {
               'Authorization': `Bearer ${this.props.token}`
@@ -26,7 +26,7 @@ export default class UserProfile extends Component {
     }
 
     // test = () => {
-    //     fetch(`http://${this.props.local}:3000/imagesandcomment`, {
+    //     fetch(`https://vrworld-back.herokuapp.com/imagesandcomment`, {
     //         'method': 'GET',
     //         'headers': {
     //           'Authorization': `Bearer ${this.props.token}`
@@ -62,7 +62,7 @@ export default class UserProfile extends Component {
     
 
     resetState = () => {
-        fetch(`http://${this.props.local}:3000/users/${this.props.currentUser.id}/images`, {
+        fetch(`https://vrworld-back.herokuapp.com/users/${this.props.currentUser.id}/images`, {
             'method': 'GET',
             'headers': {
               'Authorization': `Bearer ${this.props.token}`
@@ -77,7 +77,7 @@ export default class UserProfile extends Component {
     }
 
     profilePicFetch = () => {
-        fetch(`http://${this.props.local}:3000/users/${this.props.currentUser.id}`, {
+        fetch(`https://vrworld-back.herokuapp.com/users/${this.props.currentUser.id}`, {
             'method': 'GET',
             'headers': {
               'Authorization': `Bearer ${this.props.token}`
@@ -95,7 +95,7 @@ export default class UserProfile extends Component {
     sendImageToBackend = () => {
         // debugger
        if(this.state.currentImage)
-        fetch(`http://${this.props.local}:3000/images`, {
+        fetch(`https://vrworld-back.herokuapp.com/images`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ export default class UserProfile extends Component {
     }
          
     handleClick = () => {
-        fetch(`http://${this.props.local}:3000/collections`,{
+        fetch(`https://vrworld-back.herokuapp.com/collections`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -151,7 +151,7 @@ export default class UserProfile extends Component {
 
     updateImage = () => {
         console.log(this.state.profile_url)
-        fetch(`http://${this.props.local}:3000/users/${this.props.currentUser.id}`, {
+        fetch(`https://vrworld-back.herokuapp.com/users/${this.props.currentUser.id}`, {
             'method': 'PATCH',
             'headers': {
                 'Content-Type': 'application/json',
@@ -167,14 +167,14 @@ export default class UserProfile extends Component {
 
     delete = (id) => {
         
-        fetch(`http://${this.props.local}:3000/collections/${id}`, {
+        fetch(`https://vrworld-back.herokuapp.com/collections/${id}`, {
             'method': 'DELETE',
             'headers': {
                 'Authorization': `Bearer ${this.props.token}`
             }
           })
           .then(
-              fetch(`http://${this.props.local}:3000/images/${id}`, {
+              fetch(`https://vrworld-back.herokuapp.com/images/${id}`, {
             'method': 'DELETE',
             'headers': {
                 'Authorization': `Bearer ${this.props.token}`

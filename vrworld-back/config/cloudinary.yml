@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: emmagouti
+  api_key: '524519158498112'
+  api_secret: t5k_WI9xdV7I_ssJboi3AD49QPM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: emmagouti
+  api_key: '524519158498112'
+  api_secret: t5k_WI9xdV7I_ssJboi3AD49QPM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: emmagouti
+  api_key: '524519158498112'
+  api_secret: t5k_WI9xdV7I_ssJboi3AD49QPM
+  enhance_image_tag: true
+  static_file_support: false
