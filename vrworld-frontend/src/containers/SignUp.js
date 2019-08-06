@@ -20,7 +20,7 @@ export class SignUp extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    fetch(`http://${this.props.local}:3000/users`, {
+    fetch(`https://vrworld-back.herokuapp.com/users`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

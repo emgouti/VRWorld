@@ -15,7 +15,7 @@ export default class Images extends Component {
     }
 
     componentDidMount = () => {
-        fetch(`http://${this.props.local}:3000/images`, {
+        fetch(`https://vrworld-back.herokuapp.com/images`, {
           'method': 'get',
           'headers': {
             'Authorization': `Bearer ${this.props.token}`
@@ -31,7 +31,7 @@ export default class Images extends Component {
     }
 
     fetchUsers = () => {
-        fetch(`http://${this.props.local}:3000/users`, {
+        fetch(`https://vrworld-back.herokuapp.com/users`, {
         'method': 'get',
         'headers': {
           'Authorization': `Bearer ${this.props.token}`
@@ -44,7 +44,7 @@ export default class Images extends Component {
     }
 
     fetchComments = () => {
-      fetch(`http://${this.props.local}:3000/comments`, {
+      fetch(`https://vrworld-back.herokuapp.com/comments`, {
         'method': 'get',
         'headers': {
           'Authorization': `Bearer ${this.props.token}`
@@ -58,7 +58,7 @@ export default class Images extends Component {
 
   handleClick = (image) => {
     console.log(image)
-    fetch(`http://${this.props.local}:3000/collections`, {
+    fetch(`https://vrworld-back.herokuapp.com/collections`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ export default class Images extends Component {
 
   submitComment = (id) => {
     
-    fetch(`http://${this.props.local}:3000/comments`, {
+    fetch(`https://vrworld-back.herokuapp.com/comments`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export default class Images extends Component {
   }
 
   delete = (id) => {
-    fetch(`http://${this.props.local}:3000/comments/${id}`, {
+    fetch(`https://vrworld-back.herokuapp.com/comments/${id}`, {
       method: 'delete',
       headers: {
           'Authorization': `Bearer ${this.props.token}`
@@ -110,7 +110,7 @@ export default class Images extends Component {
   }
 
   edit = (comment) => {
-    fetch(`http://${this.props.local}:3000/comments/${comment.id}`, {
+    fetch(`https://vrworld-back.herokuapp.com/comments/${comment.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

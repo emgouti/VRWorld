@@ -32,12 +32,14 @@ class Login extends React.Component {
       }
     }
 
+    // https://vrworld-back.herokuapp.com/auth
       login = e => {
         e.preventDefault();
-        fetch(`http://${this.props.local}:3000/auth` , {
+        fetch(`https://vrworld-back.herokuapp.com/auth` , {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify({
             username: this.state.username,

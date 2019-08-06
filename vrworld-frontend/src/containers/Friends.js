@@ -11,7 +11,7 @@ import '../styles/friends.css'
         }
 
         componentDidMount(){
-            fetch(`http://${this.props.local}:3000/users`, {
+            fetch(`https://vrworld-back.herokuapp.com/users`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${this.props.token}`
@@ -26,7 +26,7 @@ import '../styles/friends.css'
         }
 
         addFollower = (friend) => {
-            fetch(`http://${this.props.local}:3000/${friend.username}/follow_user`, {
+            fetch(`https://vrworld-back.herokuapp.com/${friend.username}/follow_user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ import '../styles/friends.css'
         }
 
         getFollowers = () => {
-            fetch(`http://${this.props.local}:3000/users/following/${this.props.currentUser.id}`, {
+            fetch(`https://vrworld-back.herokuapp.com/users/following/${this.props.currentUser.id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ import '../styles/friends.css'
         }
 
         removeFollower = (friend) => {
-            fetch(`http://${this.props.local}:3000/${friend.following.username}/unfollow_user`, {
+            fetch(`https://vrworld-back.herokuapp.com/${friend.following.username}/unfollow_user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
