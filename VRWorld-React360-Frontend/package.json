@@ -17,7 +17,7 @@
     "react-360": "~1.1.0",
     "react-360-gaze-button": "^1.0.0",
     "react-360-web": "~1.1.0",
-    "react-native": "~0.55.4",
+    "react-native": "~0.70.2",
     "react-strap": "0.0.1",
     "react-vr-controller-raycaster": "^1.1.1",
     "simple-raycaster": "^1.1.0",
